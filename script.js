@@ -1,24 +1,25 @@
-let signupbtn = document.getElementById("signup");
-let signinbtn = document.getElementById("signin");
-let namefield = document.getElementById("name-field");
-let title = document.getElementById("title");
+var signupbtn = document.getElementById("signup");
+var signinbtn = document.getElementById("signin");
+var namefield = document.getElementById("name-field");
+var title = document.getElementById("title1");
 var form = document.querySelector("form");
+
+signupbtn.onclick = function(){
+    namefield.style.maxHeight="60px";
+    title.innerHTML="Sign Up";
+    signinbtn.classList.add("disable");
+    signupbtn.classList.remove("disable");
+    if(form.name.value!="" && form.password.value!="" && form.email.value!=""){
+        alert("Signed up successfully! ")
+    }
+}
 
 signinbtn.onclick = function(){
     namefield.style.maxHeight="0";
     title.innerHTML="Sign In";
-    signupbtn.classList.add("disablebtn");
-    signinbtn.classList.remove("disablebtn");
-    if(form.password.value!="" && form.email.value!=""){
+    signupbtn.classList.add("disable");
+    signinbtn.classList.remove("disable");
+    if((form.password.value!="") && form.email.value!=""){
         alert("Signed in successfully! ")
-    }
-}
-signupbtn.onclick = function(){
-    namefield.style.maxHeight="60px";
-    title.innerHTML="Sign Up";
-    signinbtn.classList.add("disablebtn");
-    signupbtn.classList.remove("disablebtn");
-    if(form.name.value!="" && form.password.value!="" && form.email.value!=""){
-        alert("Signed up successfully! ")
     }
 }
